@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class foods extends JFrame {
+public class GUI extends JFrame {
 
     JRadioButton foodA1 = new JRadioButton("Food A");
     JRadioButton foodA2 = new JRadioButton("Food A");
@@ -62,7 +62,7 @@ public class foods extends JFrame {
     JPanel selectPanel = new JPanel();
 
 
-    public foods() {
+    public GUI() {
         //guides only
         selectPanel.setLayout(null);
         selectPanel.setBounds(10,10,524,700);
