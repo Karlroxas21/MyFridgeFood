@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class GUI extends JFrame {
+public class Appetizer extends JFrame {
 
     JRadioButton foodA1 = new JRadioButton("Food A");
     JRadioButton foodA2 = new JRadioButton("Food A");
@@ -61,13 +61,23 @@ public class GUI extends JFrame {
 
     JPanel selectPanel = new JPanel();
 
+    JPanel selectedPanel = new JPanel();
+    JLabel labelSelectedPanel = new JLabel("YOU SELECTED: ");
 
-    public GUI() {
+
+
+    public Appetizer() {
         //guides only
         selectPanel.setLayout(null);
         selectPanel.setBounds(10,10,524,700);
         selectPanel.setBorder(BorderFactory.createEtchedBorder());
         selectPanel.setLayout(new GridLayout(10, 5));
+
+        selectedPanel.setLayout(null);
+        selectedPanel.setBounds(544, 10,790, 200);
+        selectedPanel.setBorder(BorderFactory.createEtchedBorder());
+        selectedPanel.add(labelSelectedPanel, BorderLayout.WEST);
+        labelSelectedPanel.setBounds(20,10,100, 10);
 
 
         //end of guide
@@ -186,9 +196,11 @@ public class GUI extends JFrame {
         selectPanel.add(foodE9);
         selectPanel.add(foodE0);
 
+        selectedPanel.add(labelSelectedPanel);
+
 
         //do not move/ edit this.
-        this.setTitle("My Fridge Food");
+        this.setTitle("My Fridge Food- Appetizer");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setSize(1360, 760);
@@ -197,8 +209,7 @@ public class GUI extends JFrame {
 
 
         this.add(selectPanel);
-
-
+        this.add(selectedPanel);
 
 
         ImageIcon icon = new ImageIcon("fridge.jpg");
