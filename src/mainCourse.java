@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class mainCourse extends JFrame {
+public class mainCourse extends JFrame implements ActionListener {
 
     JRadioButton foodA1 = new JRadioButton("Food A");
     JRadioButton foodA2 = new JRadioButton("Food A");
@@ -64,6 +66,11 @@ public class mainCourse extends JFrame {
     JPanel selectedPanel = new JPanel();
     JLabel labelSelectedPanel = new JLabel("YOU SELECTED: ");
 
+    JLabel foodCategory = new JLabel("Main Course;");
+
+    JButton findMeFood = new JButton("FIND ME A FOOD!");
+    JButton resetFridge = new JButton("Reset my Fridge!");
+
 
 
     public mainCourse() {
@@ -79,8 +86,23 @@ public class mainCourse extends JFrame {
         selectedPanel.add(labelSelectedPanel, BorderLayout.WEST);
         labelSelectedPanel.setBounds(20,10,100, 10);
 
+        foodCategory.setBounds(550,225,200,20);
+
+        findMeFood.setBounds(544,669,395,40);
+        resetFridge.setBounds(940,669,395,40);
+
 
         //end of guide
+        //customization only
+        foodCategory.setFont(new Font("Times New Roman",Font.ITALIC,21));
+
+
+        findMeFood.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+        findMeFood.setFocusable(false);
+        resetFridge.setFont(new Font("Times New Roman",Font.ITALIC,21));
+        resetFridge.setFocusable(false);
+
+
         foodA1.setFocusable(false);
         foodA2.setFocusable(false);
         foodA3.setFocusable(false);
@@ -139,6 +161,7 @@ public class mainCourse extends JFrame {
         foodE8.setFocusable(false);
         foodE9.setFocusable(false);
         foodE0.setFocusable(false);
+        //end of customization
 
         //add here
         selectPanel.add(foodA1);
@@ -199,6 +222,8 @@ public class mainCourse extends JFrame {
         selectedPanel.add(labelSelectedPanel);
 
 
+        findMeFood.addActionListener(this);
+        resetFridge.addActionListener(this);
         //do not move/ edit this.
         this.setTitle("My Fridge Food- Main Course");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -211,10 +236,23 @@ public class mainCourse extends JFrame {
         this.add(selectPanel);
         this.add(selectedPanel);
 
+        this.add(foodCategory);
+
+        this.add(findMeFood);
+        this.add(resetFridge);
+
 
         ImageIcon icon = new ImageIcon("fridge.jpg");
         this.setIconImage(icon.getImage());
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource().equals(resetFridge)){
+            this.dispose();
+            new LaunchPage();
+        }
     }
 }
 

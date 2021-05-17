@@ -30,6 +30,7 @@ public class LaunchPage extends JFrame implements ActionListener {
         dessert.addActionListener(this);
         mainCourse.addActionListener(this);
         appetizer.addActionListener(this);
+
         this.add(appetizer);
         this.add(mainCourse);
         this.add(dessert);

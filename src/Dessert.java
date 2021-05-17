@@ -66,6 +66,11 @@ public class Dessert extends JFrame implements ActionListener {
     JPanel selectedPanel = new JPanel();
     JLabel labelSelectedPanel = new JLabel("YOU SELECTED: ");
 
+    JLabel foodCategory = new JLabel("Desserts;");
+
+    JButton findMeFood = new JButton("FIND ME A FOOD!");
+    JButton resetFridge = new JButton("Reset my Fridge!");
+
 
 
     public Dessert() {
@@ -81,8 +86,23 @@ public class Dessert extends JFrame implements ActionListener {
         selectedPanel.add(labelSelectedPanel, BorderLayout.WEST);
         labelSelectedPanel.setBounds(20,10,100, 10);
 
+        foodCategory.setBounds(550,225,200,20);
+
+        findMeFood.setBounds(544,669,395,40);
+        resetFridge.setBounds(940,669,395,40);
+
 
         //end of guide
+        //customization only
+        foodCategory.setFont(new Font("Times New Roman",Font.ITALIC,21));
+
+
+        findMeFood.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+        findMeFood.setFocusable(false);
+        resetFridge.setFont(new Font("Times New Roman",Font.ITALIC,21));
+        resetFridge.setFocusable(false);
+
+
         foodA1.setFocusable(false);
         foodA2.setFocusable(false);
         foodA3.setFocusable(false);
@@ -141,6 +161,7 @@ public class Dessert extends JFrame implements ActionListener {
         foodE8.setFocusable(false);
         foodE9.setFocusable(false);
         foodE0.setFocusable(false);
+        //end of customization
 
         //add here
         selectPanel.add(foodA1);
@@ -200,6 +221,8 @@ public class Dessert extends JFrame implements ActionListener {
 
         selectedPanel.add(labelSelectedPanel);
 
+        findMeFood.addActionListener(this);
+        resetFridge.addActionListener(this);
 
         //do not move/ edit this.
         this.setTitle("My Fridge Food- Dessert");
@@ -213,6 +236,11 @@ public class Dessert extends JFrame implements ActionListener {
         this.add(selectPanel);
         this.add(selectedPanel);
 
+        this.add(foodCategory);
+
+        this.add(findMeFood);
+        this.add(resetFridge);
+
 
         ImageIcon icon = new ImageIcon("fridge.jpg");
         this.setIconImage(icon.getImage());
@@ -221,8 +249,10 @@ public class Dessert extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getSource().equals(resetFridge)){
+            this.dispose();
+            new LaunchPage();
+        }
     }
 }
-
 
