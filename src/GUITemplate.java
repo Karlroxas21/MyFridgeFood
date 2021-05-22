@@ -4,9 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUITemplate extends JFrame implements ActionListener {
-    public static String categoryName;
+    int temp = 2;
 
-    JRadioButton foodA1 = new JRadioButton("Food A");
+    JRadioButton foodA1 = new JRadioButton();
     JRadioButton foodA2 = new JRadioButton("Food A");
     JRadioButton foodA3 = new JRadioButton("Food A");
     JRadioButton foodA4 = new JRadioButton("Food A");
@@ -65,7 +65,7 @@ public class GUITemplate extends JFrame implements ActionListener {
     JPanel selectPanel = new JPanel();
 
     JPanel selectedPanel = new JPanel();
-    JLabel labelSelectedPanel = new JLabel("YOU SELECTED: ");
+    JLabel labelSelectedPanel = new JLabel();
 
     JLabel foodCategory = new JLabel();
 
@@ -73,9 +73,19 @@ public class GUITemplate extends JFrame implements ActionListener {
     JButton resetFridge = new JButton("Reset my Fridge!");
 
 
+    JLabel labelSelect1 = new JLabel();
+    JLabel labelSelect2 = new JLabel("B");
+    JLabel labelSelect3 = new JLabel("C");
+    JLabel labelSelect4 = new JLabel("D");
+    JLabel labelSelect5 = new JLabel("E");
+    JLabel labelSelect6 = new JLabel("F");
+    JLabel labelSelect7 = new JLabel("G");
+    JLabel labelSelect8 = new JLabel("H");
+    JLabel labelSelect9 = new JLabel("I");
+    JLabel labelSelect0 = new JLabel("J");
 
 
-    public GUITemplate(String name) {
+    public GUITemplate(String name){
 
         //guides only
         selectPanel.setLayout(null);
@@ -86,8 +96,9 @@ public class GUITemplate extends JFrame implements ActionListener {
         selectedPanel.setLayout(null);
         selectedPanel.setBounds(544, 10,790, 200);
         selectedPanel.setBorder(BorderFactory.createEtchedBorder());
-        selectedPanel.add(labelSelectedPanel, BorderLayout.WEST);
-        labelSelectedPanel.setBounds(20,10,100, 10);
+        selectedPanel.setLayout(new GridLayout(5,2));
+
+
 
         foodCategory.setBounds(550,225,200,20);
 
@@ -97,6 +108,7 @@ public class GUITemplate extends JFrame implements ActionListener {
         foodCategory.setText(name);
 
         //end of guide
+
         //customization only
         foodCategory.setFont(new Font("Times New Roman",Font.ITALIC,21));
 
@@ -106,6 +118,16 @@ public class GUITemplate extends JFrame implements ActionListener {
         resetFridge.setFont(new Font("Times New Roman",Font.ITALIC,21));
         resetFridge.setFocusable(false);
 
+        labelSelect1.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect2.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect3.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect4.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect5.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect6.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect7.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect8.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect9.setFont(new Font("Times New Roman", Font.PLAIN,22));
+        labelSelect0.setFont(new Font("Times New Roman", Font.PLAIN,22));
 
 
         foodA1.setFocusable(false);
@@ -147,7 +169,7 @@ public class GUITemplate extends JFrame implements ActionListener {
         foodD1.setFocusable(false);
         foodD2.setFocusable(false);
         foodD3.setFocusable(false);
-        foodD4.setFocusable(false);;
+        foodD4.setFocusable(false);
         foodD5.setFocusable(false);
         foodD6.setFocusable(false);
         foodD7.setFocusable(false);
@@ -169,6 +191,8 @@ public class GUITemplate extends JFrame implements ActionListener {
         //end of customization
 
         //add here
+        foodA1.addActionListener(this);
+
         selectPanel.add(foodA1);
         selectPanel.add(foodA2);
         selectPanel.add(foodA3);
@@ -224,20 +248,24 @@ public class GUITemplate extends JFrame implements ActionListener {
         selectPanel.add(foodE9);
         selectPanel.add(foodE0);
 
-        selectedPanel.add(labelSelectedPanel);
+
+        selectedPanel.add(labelSelect1);
+        selectedPanel.add(labelSelect2);
+        selectedPanel.add(labelSelect3);
+        selectedPanel.add(labelSelect4);
+        selectedPanel.add(labelSelect5);
+        selectedPanel.add(labelSelect6);
+        selectedPanel.add(labelSelect7);
+        selectedPanel.add(labelSelect8);
+        selectedPanel.add(labelSelect9);
+        selectedPanel.add(labelSelect0);
+
+
 
 
         findMeFood.addActionListener(this);
         resetFridge.addActionListener(this);
         //do not move/ edit this.
-        this.setTitle("My Fridge Food- " + name);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setResizable(false);
-        this.setSize(1360, 760);
-        this.setLayout(null);
-        this.setVisible(true);
-
-
         this.add(selectPanel);
         this.add(selectedPanel);
 
@@ -246,9 +274,20 @@ public class GUITemplate extends JFrame implements ActionListener {
         this.add(findMeFood);
         this.add(resetFridge);
 
+        this.setTitle("My Fridge Food- " + name);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setSize(1360, 760);
+        this.setLayout(null);
+        this.setVisible(true);
+        this.validate();
+
+
+
 
         ImageIcon icon = new ImageIcon("fridge.jpg");
         this.setIconImage(icon.getImage());
+
 
     }
 
@@ -257,7 +296,9 @@ public class GUITemplate extends JFrame implements ActionListener {
         if(e.getSource().equals(resetFridge)){
             this.dispose();
             new LaunchPage();
+            temp = 2;
         }
     }
+
 }
 
