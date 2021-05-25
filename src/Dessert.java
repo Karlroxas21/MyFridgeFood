@@ -27,9 +27,7 @@ public class Dessert extends GUITemplate  {
         }
     }
 
-    public void checkFOod(ArrayList<> karl){
 
-    }
 }
 
 

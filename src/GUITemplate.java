@@ -39,27 +39,6 @@ public class GUITemplate extends JFrame implements ActionListener {
     JRadioButton foodC9 = new JRadioButton("Food C9");
     JRadioButton foodC0 = new JRadioButton("Food C0");
 
-    JRadioButton foodD1 = new JRadioButton("Food D1");
-    JRadioButton foodD2 = new JRadioButton("Food D2");
-    JRadioButton foodD3 = new JRadioButton("Food D3");
-    JRadioButton foodD4 = new JRadioButton("Food D4");
-    JRadioButton foodD5 = new JRadioButton("Food D5");
-    JRadioButton foodD6 = new JRadioButton("Food D6");
-    JRadioButton foodD7 = new JRadioButton("Food D7");
-    JRadioButton foodD8 = new JRadioButton("Food D8");
-    JRadioButton foodD9 = new JRadioButton("Food D9");
-    JRadioButton foodD0 = new JRadioButton("Food D0");
-
-    JRadioButton foodE1 = new JRadioButton("Food E1");
-    JRadioButton foodE2 = new JRadioButton("Food E2");
-    JRadioButton foodE3 = new JRadioButton("Food E3");
-    JRadioButton foodE4 = new JRadioButton("Food E4");
-    JRadioButton foodE5 = new JRadioButton("Food E5");
-    JRadioButton foodE6 = new JRadioButton("Food E6");
-    JRadioButton foodE7 = new JRadioButton("Food E7");
-    JRadioButton foodE8 = new JRadioButton("Food E8");
-    JRadioButton foodE9 = new JRadioButton("Food E9");
-    JRadioButton foodE0 = new JRadioButton("Food E0");
 
 
     JPanel selectPanel = new JPanel();
@@ -91,7 +70,7 @@ public class GUITemplate extends JFrame implements ActionListener {
         selectPanel.setLayout(null);
         selectPanel.setBounds(10,10,524,700);
         selectPanel.setBorder(BorderFactory.createEtchedBorder());
-        selectPanel.setLayout(new GridLayout(10, 5));
+        selectPanel.setLayout(new GridLayout(10, 2));
 
         selectedPanel.setLayout(null);
         selectedPanel.setBounds(544, 10,790, 200);
@@ -166,28 +145,6 @@ public class GUITemplate extends JFrame implements ActionListener {
         foodC0.setFocusable(false);
 
 
-        foodD1.setFocusable(false);
-        foodD2.setFocusable(false);
-        foodD3.setFocusable(false);
-        foodD4.setFocusable(false);
-        foodD5.setFocusable(false);
-        foodD6.setFocusable(false);
-        foodD7.setFocusable(false);
-        foodD8.setFocusable(false);
-        foodD9.setFocusable(false);
-        foodD0.setFocusable(false);
-
-
-        foodE1.setFocusable(false);
-        foodE2.setFocusable(false);
-        foodE3.setFocusable(false);
-        foodE4.setFocusable(false);
-        foodE5.setFocusable(false);
-        foodE6.setFocusable(false);
-        foodE7.setFocusable(false);
-        foodE8.setFocusable(false);
-        foodE9.setFocusable(false);
-        foodE0.setFocusable(false);
         //end of customization
 
         //add here
@@ -226,39 +183,9 @@ public class GUITemplate extends JFrame implements ActionListener {
         selectPanel.add(foodC9);
         selectPanel.add(foodC0);
 
-        selectPanel.add(foodD1);
-        selectPanel.add(foodD2);
-        selectPanel.add(foodD3);
-        selectPanel.add(foodD4);
-        selectPanel.add(foodD5);
-        selectPanel.add(foodD6);
-        selectPanel.add(foodD7);
-        selectPanel.add(foodD8);
-        selectPanel.add(foodD9);
-        selectPanel.add(foodD0);
-
-        selectPanel.add(foodE1);
-        selectPanel.add(foodE2);
-        selectPanel.add(foodE3);
-        selectPanel.add(foodE4);
-        selectPanel.add(foodE5);
-        selectPanel.add(foodE6);
-        selectPanel.add(foodE7);
-        selectPanel.add(foodE8);
-        selectPanel.add(foodE9);
-        selectPanel.add(foodE0);
 
 
-        selectedPanel.add(labelSelect1);
-        selectedPanel.add(labelSelect2);
-        selectedPanel.add(labelSelect3);
-        selectedPanel.add(labelSelect4);
-        selectedPanel.add(labelSelect5);
-        selectedPanel.add(labelSelect6);
-        selectedPanel.add(labelSelect7);
-        selectedPanel.add(labelSelect8);
-        selectedPanel.add(labelSelect9);
-        selectedPanel.add(labelSelect0);
+
 
 
 
