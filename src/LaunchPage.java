@@ -35,7 +35,7 @@ public class LaunchPage extends JFrame implements ActionListener {
         this.add(mainCourse);
         this.add(dessert);
         this.add(iNeed);
-        this.setTitle("My Fridge Foood");
+        this.setTitle("My Fridge Food");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.setSize(500, 300);

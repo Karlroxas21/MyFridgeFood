@@ -4,18 +4,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUITemplate extends JFrame implements ActionListener {
-    public static String categoryName;
 
-    JRadioButton foodA1 = new JRadioButton("Food A");
-    JRadioButton foodA2 = new JRadioButton("Food A");
-    JRadioButton foodA3 = new JRadioButton("Food A");
-    JRadioButton foodA4 = new JRadioButton("Food A");
-    JRadioButton foodA5 = new JRadioButton("Food A");
-    JRadioButton foodA6 = new JRadioButton("Food A");
-    JRadioButton foodA7 = new JRadioButton("Food A");
-    JRadioButton foodA8 = new JRadioButton("Food A");
-    JRadioButton foodA9 = new JRadioButton("Food A");
-    JRadioButton foodA0 = new JRadioButton("Food A");
+    JLabel result1 = new JLabel("");
+    JLabel result2 = new JLabel("");
+    JLabel result3 = new JLabel("");
+
+    JPanel guidePanelOnly = new JPanel();
+
+    JRadioButton foodA1 = new JRadioButton("Food A1");
+    JRadioButton foodA2 = new JRadioButton("Food A2");
+    JRadioButton foodA3 = new JRadioButton("Food A3");
+    JRadioButton foodA4 = new JRadioButton("Food A4");
+    JRadioButton foodA5 = new JRadioButton("Food A5");
+    JRadioButton foodA6 = new JRadioButton("Food A6");
+    JRadioButton foodA7 = new JRadioButton("Food A7");
+    JRadioButton foodA8 = new JRadioButton("Food A8");
+    JRadioButton foodA9 = new JRadioButton("Food A9");
+    JRadioButton foodA0 = new JRadioButton("Food A0");
 
     JRadioButton foodB1 = new JRadioButton("Food B1");
     JRadioButton foodB2 = new JRadioButton("Food B2");
@@ -39,33 +44,10 @@ public class GUITemplate extends JFrame implements ActionListener {
     JRadioButton foodC9 = new JRadioButton("Food C9");
     JRadioButton foodC0 = new JRadioButton("Food C0");
 
-    JRadioButton foodD1 = new JRadioButton("Food D1");
-    JRadioButton foodD2 = new JRadioButton("Food D2");
-    JRadioButton foodD3 = new JRadioButton("Food D3");
-    JRadioButton foodD4 = new JRadioButton("Food D4");
-    JRadioButton foodD5 = new JRadioButton("Food D5");
-    JRadioButton foodD6 = new JRadioButton("Food D6");
-    JRadioButton foodD7 = new JRadioButton("Food D7");
-    JRadioButton foodD8 = new JRadioButton("Food D8");
-    JRadioButton foodD9 = new JRadioButton("Food D9");
-    JRadioButton foodD0 = new JRadioButton("Food D0");
-
-    JRadioButton foodE1 = new JRadioButton("Food E1");
-    JRadioButton foodE2 = new JRadioButton("Food E2");
-    JRadioButton foodE3 = new JRadioButton("Food E3");
-    JRadioButton foodE4 = new JRadioButton("Food E4");
-    JRadioButton foodE5 = new JRadioButton("Food E5");
-    JRadioButton foodE6 = new JRadioButton("Food E6");
-    JRadioButton foodE7 = new JRadioButton("Food E7");
-    JRadioButton foodE8 = new JRadioButton("Food E8");
-    JRadioButton foodE9 = new JRadioButton("Food E9");
-    JRadioButton foodE0 = new JRadioButton("Food E0");
 
 
     JPanel selectPanel = new JPanel();
 
-    JPanel selectedPanel = new JPanel();
-    JLabel labelSelectedPanel = new JLabel("YOU SELECTED: ");
 
     JLabel foodCategory = new JLabel();
 
@@ -74,38 +56,49 @@ public class GUITemplate extends JFrame implements ActionListener {
 
 
 
-
-    public GUITemplate(String name) {
+    public GUITemplate(String name){
 
         //guides only
         selectPanel.setLayout(null);
         selectPanel.setBounds(10,10,524,700);
         selectPanel.setBorder(BorderFactory.createEtchedBorder());
-        selectPanel.setLayout(new GridLayout(10, 5));
+        selectPanel.setLayout(new GridLayout(10, 2));
 
-        selectedPanel.setLayout(null);
-        selectedPanel.setBounds(544, 10,790, 200);
-        selectedPanel.setBorder(BorderFactory.createEtchedBorder());
-        selectedPanel.add(labelSelectedPanel, BorderLayout.WEST);
-        labelSelectedPanel.setBounds(20,10,100, 10);
+//        guidePanelOnly.setBorder(BorderFactory.createEtchedBorder());
+        guidePanelOnly.setLayout(new GridLayout(3,1));
+        guidePanelOnly.setBounds(537,50,443,615);
 
-        foodCategory.setBounds(550,225,200,20);
 
-        findMeFood.setBounds(544,669,395,40);
-        resetFridge.setBounds(940,669,395,40);
 
-        foodCategory.setText(name);
+
+        foodCategory.setBounds(550,15,200,30);
+
+        findMeFood.setBounds(537,669,220,40);
+        resetFridge.setBounds(760,669,220,40);
+
+        foodCategory.setText(name + ";");
+
+        result1.setBounds(580, 40, 200, 30);
+        result2.setBounds(580, 40, 200, 30);
+        result3.setBounds(580, 40, 200, 30);
+
 
         //end of guide
+
         //customization only
-        foodCategory.setFont(new Font("Times New Roman",Font.ITALIC,21));
+        result1.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        result1.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        result2.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        result2.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        result3.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        result3.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        foodCategory.setFont(new Font("Times New Roman",Font.ITALIC,30));
 
 
-        findMeFood.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+        findMeFood.setFont(new Font("Times New Roman", Font.PLAIN, 21));
         findMeFood.setFocusable(false);
         resetFridge.setFont(new Font("Times New Roman",Font.ITALIC,21));
         resetFridge.setFocusable(false);
-
 
 
         foodA1.setFocusable(false);
@@ -144,31 +137,40 @@ public class GUITemplate extends JFrame implements ActionListener {
         foodC0.setFocusable(false);
 
 
-        foodD1.setFocusable(false);
-        foodD2.setFocusable(false);
-        foodD3.setFocusable(false);
-        foodD4.setFocusable(false);;
-        foodD5.setFocusable(false);
-        foodD6.setFocusable(false);
-        foodD7.setFocusable(false);
-        foodD8.setFocusable(false);
-        foodD9.setFocusable(false);
-        foodD0.setFocusable(false);
-
-
-        foodE1.setFocusable(false);
-        foodE2.setFocusable(false);
-        foodE3.setFocusable(false);
-        foodE4.setFocusable(false);
-        foodE5.setFocusable(false);
-        foodE6.setFocusable(false);
-        foodE7.setFocusable(false);
-        foodE8.setFocusable(false);
-        foodE9.setFocusable(false);
-        foodE0.setFocusable(false);
         //end of customization
 
         //add here
+        foodA1.addActionListener(this);
+        foodA2.addActionListener(this);
+        foodA3.addActionListener(this);
+        foodA4.addActionListener(this);
+        foodA5.addActionListener(this);
+        foodA6.addActionListener(this);
+        foodA7.addActionListener(this);
+        foodA8.addActionListener(this);
+        foodA9.addActionListener(this);
+        foodA0.addActionListener(this);
+        foodB1.addActionListener(this);
+        foodB2.addActionListener(this);
+        foodB3.addActionListener(this);
+        foodB4.addActionListener(this);
+        foodB5.addActionListener(this);
+        foodB6.addActionListener(this);
+        foodB7.addActionListener(this);
+        foodB8.addActionListener(this);
+        foodB9.addActionListener(this);
+        foodB0.addActionListener(this);
+        foodC1.addActionListener(this);
+        foodC2.addActionListener(this);
+        foodC3.addActionListener(this);
+        foodC4.addActionListener(this);
+        foodC5.addActionListener(this);
+        foodC6.addActionListener(this);
+        foodC7.addActionListener(this);
+        foodC8.addActionListener(this);
+        foodC9.addActionListener(this);
+        foodC0.addActionListener(this);
+
         selectPanel.add(foodA1);
         selectPanel.add(foodA2);
         selectPanel.add(foodA3);
@@ -202,53 +204,41 @@ public class GUITemplate extends JFrame implements ActionListener {
         selectPanel.add(foodC9);
         selectPanel.add(foodC0);
 
-        selectPanel.add(foodD1);
-        selectPanel.add(foodD2);
-        selectPanel.add(foodD3);
-        selectPanel.add(foodD4);
-        selectPanel.add(foodD5);
-        selectPanel.add(foodD6);
-        selectPanel.add(foodD7);
-        selectPanel.add(foodD8);
-        selectPanel.add(foodD9);
-        selectPanel.add(foodD0);
 
-        selectPanel.add(foodE1);
-        selectPanel.add(foodE2);
-        selectPanel.add(foodE3);
-        selectPanel.add(foodE4);
-        selectPanel.add(foodE5);
-        selectPanel.add(foodE6);
-        selectPanel.add(foodE7);
-        selectPanel.add(foodE8);
-        selectPanel.add(foodE9);
-        selectPanel.add(foodE0);
 
-        selectedPanel.add(labelSelectedPanel);
+
 
 
         findMeFood.addActionListener(this);
         resetFridge.addActionListener(this);
         //do not move/ edit this.
-        this.setTitle("My Fridge Food- " + name);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setResizable(false);
-        this.setSize(1360, 760);
-        this.setLayout(null);
-        this.setVisible(true);
-
-
         this.add(selectPanel);
-        this.add(selectedPanel);
 
         this.add(foodCategory);
 
         this.add(findMeFood);
         this.add(resetFridge);
 
+        guidePanelOnly.add(result1);
+        guidePanelOnly.add(result2);
+        guidePanelOnly.add(result3);
+
+        this.add(guidePanelOnly);
+
+        this.setTitle("My Fridge Food- " + name);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setSize(1000, 760);
+        this.setLayout(null);
+        this.setVisible(true);
+        this.validate();
+
+
+
 
         ImageIcon icon = new ImageIcon("fridge.jpg");
         this.setIconImage(icon.getImage());
+
 
     }
 
@@ -259,5 +249,6 @@ public class GUITemplate extends JFrame implements ActionListener {
             new LaunchPage();
         }
     }
+
 }
 

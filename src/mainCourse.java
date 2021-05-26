@@ -1,7 +1,16 @@
+import javax.swing.*;
+
+public class mainCourse extends GUITemplate  {
 
 
-public class mainCourse  {
-    GUITemplate template = new GUITemplate("Main Course");
+    mainCourse(){
+        super("Main Course");
+        this.foodA1.setText("Pork");
+
+    }
+
+
+
 
 
 }
