@@ -1,9 +1,15 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.lang.reflect.Array;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-public class Dessert extends GUITemplate  {
+public class Dessert extends GUITemplate {
 
     boolean whiteSugarDuplicate;
     boolean condensedMilkDuplicate;
@@ -52,7 +58,7 @@ public class Dessert extends GUITemplate  {
     boolean berryBCP4;
 
 
-    Dessert(){
+    Dessert() {
         super("Dessert");
 
         String whiteSugarDuplicate = "White Sugar";
@@ -105,163 +111,281 @@ public class Dessert extends GUITemplate  {
         foodC0.setText("Pie Crust");
 
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
-        if(e.getSource()==(findMeFood)){
-            avocadoBakedEggsChecker(avocadoBE1,avocadoBE2,avocadoBE3);
+        if (e.getSource() == (findMeFood)) {
+            avocadoBakedEggsChecker(avocadoBE1, avocadoBE2, avocadoBE3);
             fruitShakeChecker(fruitS1, fruitS2, fruitS3, fruitS4);
-            chocolateLavaCakeChecker(chocolateLC1,chocolateLC2,chocolateLC3,chocolateLC4,chocolateLC5,chocolateLC6);
-            grapeSaladChecker(whiteSugarDuplicate,grapeSalad1,grapeSalad2,grapeSalad3,grapeSalad4);
-            coffeeJellyChecker(whiteSugarDuplicate,coffeeJelly1,condensedMilkDuplicate,coffeeJelly2,coffeeJelly3);
+            chocolateLavaCakeChecker(chocolateLC1, chocolateLC2, chocolateLC3, chocolateLC4, chocolateLC5, chocolateLC6);
+            grapeSaladChecker(whiteSugarDuplicate, grapeSalad1, grapeSalad2, grapeSalad3, grapeSalad4);
+            coffeeJellyChecker(whiteSugarDuplicate, coffeeJelly1, condensedMilkDuplicate, coffeeJelly2, coffeeJelly3);
             grahamCakeChcker(allPurposeCreamDuplicate, grahamC1, condensedMilkDuplicate, grahamC2);
             oreoIceCreamChecker(allPurposeCreamDuplicate, oreoIC1, condensedMilkDuplicate);
-            berryBerryCoolPieChecker(berryBCP1,berryBCP2,condensedMilkDuplicate,berryBCP3,berryBCP4);
+            berryBerryCoolPieChecker(berryBCP1, berryBCP2, condensedMilkDuplicate, berryBCP3, berryBCP4);
         }
-         if(e.getSource()==foodA1){
-             avocadoBE1 = true;
+        if (e.getSource() == foodA1) {
+            avocadoBE1 = true;
+
         }
-        if(e.getSource()==foodA2){
+        if (e.getSource() == foodA2) {
             avocadoBE2 = true;
         }
-        if(e.getSource()==foodA3){
+        if (e.getSource() == foodA3) {
             avocadoBE3 = true;
         }
         //start of fruit shake
-        if(e.getSource()==foodA4){
+        if (e.getSource() == foodA4) {
             fruitS1 = true;
         }
-        if(e.getSource()==foodA5){
+        if (e.getSource() == foodA5) {
             fruitS2 = true;
         }
-        if(e.getSource()==foodA6){
+        if (e.getSource() == foodA6) {
             fruitS3 = true;
         }
-        if(e.getSource()==foodA7){
+        if (e.getSource() == foodA7) {
             fruitS4 = true;
         }
         //start of chocolate lava cake
-        if(e.getSource()==foodA8){
-            chocolateLC1= true;
+        if (e.getSource() == foodA8) {
+            chocolateLC1 = true;
         }
-        if(e.getSource()==foodA9){
+        if (e.getSource() == foodA9) {
             chocolateLC2 = true;
         }
-        if(e.getSource()==foodA0){
+        if (e.getSource() == foodA0) {
             chocolateLC3 = true;
         }
-        if(e.getSource()==foodB1){
+        if (e.getSource() == foodB1) {
             chocolateLC4 = true;
         }
-        if(e.getSource()==foodB2){
+        if (e.getSource() == foodB2) {
             chocolateLC5 = true;
         }
-        if(e.getSource()==foodB3){
+        if (e.getSource() == foodB3) {
             chocolateLC6 = true;
         }
         //start of grape salad
-        if(e.getSource()==foodB4){
+        if (e.getSource() == foodB4) {
             whiteSugarDuplicate = true;
         }
-        if(e.getSource()==foodB5){
+        if (e.getSource() == foodB5) {
             grapeSalad1 = true;
         }
-        if(e.getSource()==foodB6){
+        if (e.getSource() == foodB6) {
             grapeSalad2 = true;
         }
-        if(e.getSource()==foodB7){
+        if (e.getSource() == foodB7) {
             grapeSalad3 = true;
         }
-        if(e.getSource()==foodB8){
+        if (e.getSource() == foodB8) {
             grapeSalad4 = true;
         }
         //start of coffee jelly
-        if(e.getSource()==foodB4){
+        if (e.getSource() == foodB4) {
             whiteSugarDuplicate = true;
         }
-        if(e.getSource()==foodB9){
-            coffeeJelly1= true;
+        if (e.getSource() == foodB9) {
+            coffeeJelly1 = true;
         }
-        if(e.getSource()==foodB0){
+        if (e.getSource() == foodB0) {
             condensedMilkDuplicate = true;
         }
-        if(e.getSource()==foodC1){
+        if (e.getSource() == foodC1) {
             coffeeJelly2 = true;
         }
-        if(e.getSource()==foodC2){
+        if (e.getSource() == foodC2) {
             coffeeJelly3 = true;
+
         }
         //start of graham cake
-        if(e.getSource()==foodC3){
+        if (e.getSource() == foodC3) {
             allPurposeCreamDuplicate = true;
         }
-        if(e.getSource()==foodC4){
+        if (e.getSource() == foodC4) {
             grahamC1 = true;
         }
-        if(e.getSource()==foodC5){
+        if (e.getSource() == foodC5) {
             grahamC2 = true;
         }
-        if(e.getSource()==foodC6){
+        if (e.getSource() == foodC6) {
             oreoIC1 = true;
         }
         //start of berry berry cool pie
-        if(e.getSource()==foodC7){
+        if (e.getSource() == foodC7) {
             berryBCP1 = true;
         }
-        if(e.getSource()==foodC8){
+        if (e.getSource() == foodC8) {
             berryBCP2 = true;
         }
-        if(e.getSource()==foodC9){
-            berryBCP3= true;
+        if (e.getSource() == foodC9) {
+            berryBCP3 = true;
         }
-        if(e.getSource()==foodC0){
+        if (e.getSource() == foodC0) {
             berryBCP4 = true;
         }
 
 
     }
 
-    public String getFood(JRadioButton a) { return a.getText(); }
-    public void avocadoBakedEggsChecker(boolean a, boolean b, boolean c){
-      if(a && b&& c){
-          System.out.println("AVOCADO BAKED EGGS");
+    public String getFood(JRadioButton a) {
+        return a.getText();
+    }
+
+    public void avocadoBakedEggsChecker(boolean a, boolean b, boolean c) {
+        if (a && b && c) {
+            result1.setText("Avocado Baked Eggs");
+            result1.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    super.mouseClicked(e);
+                    try {
+
+                        Desktop.getDesktop().browse(new URI("https://www.allrecipes.com/recipe/231986/avocado-baked-eggs/"));
+
+                    } catch (IOException | URISyntaxException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            });
         }
     }
-    public void fruitShakeChecker(boolean a, boolean b, boolean c, boolean d){
-        if(a && b && c && d){
-            System.out.println("Fruit Shake");
+
+    public void fruitShakeChecker(boolean a, boolean b, boolean c, boolean d) {
+        if (a && b && c && d) {
+                result2.setText("Fruit Shake");
+                result2.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        super.mouseClicked(e);
+                        try {
+
+                            Desktop.getDesktop().browse(new URI("https://www.allrecipes.com/recipe/232028/mango-peach-banana-smoothie/"));
+
+                        } catch (IOException | URISyntaxException e1) {
+                            e1.printStackTrace();
+                        }
+                    }
+                });
         }
     }
-    public void chocolateLavaCakeChecker(boolean a, boolean b, boolean c, boolean d, boolean e, boolean f){
-        if(a && b && c && d && e && f){
-            System.out.println("CHOCOLATE LAVA CAKE");
+
+    public void chocolateLavaCakeChecker(boolean a, boolean b, boolean c, boolean d, boolean e, boolean f) {
+        if (a && b && c && d && e && f) {
+            result3.setText("Chocolate Lava Cake");
+            result3.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    super.mouseClicked(e);
+                    try {
+
+                        Desktop.getDesktop().browse(new URI("https://www.allrecipes.com/recipe/219964/chef-johns-chocolate-lava-cake/"));
+
+                    } catch (IOException | URISyntaxException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            });
         }
     }
-    public void grapeSaladChecker(boolean a, boolean b, boolean c, boolean d, boolean e){
-        if(a && b && c && d && e){
-            System.out.println("GRAPE SALAD");
+
+    public void grapeSaladChecker(boolean a, boolean b, boolean c, boolean d, boolean e) {
+        if (a && b && c && d && e) {
+            result1.setText("Grape Salad");
+            result1.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    super.mouseClicked(e);
+                    try {
+
+                        Desktop.getDesktop().browse(new URI("https://www.allrecipes.com/recipe/70798/easy-grape-salad/"));
+
+                    } catch (IOException | URISyntaxException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            });
         }
     }
-    public void coffeeJellyChecker(boolean a, boolean b, boolean c, boolean d, boolean e){
-        if(a && b && c && d && e){
-            System.out.println("COFFEE JELLY");
+
+    public void coffeeJellyChecker(boolean a, boolean b, boolean c, boolean d, boolean e) {
+        if (a && b && c && d && e) {
+            result2.setText("Coffee Jelly");
+            result2.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    super.mouseClicked(e);
+                    try {
+
+                        Desktop.getDesktop().browse(new URI("https://www.allrecipes.com/recipe/214724/coffee-jelly/"));
+
+                    } catch (IOException | URISyntaxException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            });
         }
     }
-    public void grahamCakeChcker(boolean a, boolean b, boolean c, boolean d){
-        if(a && b && c && d){
-            System.out.println("GRAHAM CAKE");
+
+    public void grahamCakeChcker(boolean a, boolean b, boolean c, boolean d) {
+        if (a && b && c && d) {
+            result3.setText("Graham Cake");
+            result3.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    super.mouseClicked(e);
+                    try {
+
+                        Desktop.getDesktop().browse(new URI("https://www.panlasangpinoyrecipes.com/how-to-make-fruity-graham-cake/"));
+
+                    } catch (IOException | URISyntaxException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            });
         }
     }
-    public void oreoIceCreamChecker(boolean a, boolean b, boolean c){
-        if(a && b && c ){
-            System.out.println("OREO ICE CREAM");
+
+    public void oreoIceCreamChecker(boolean a, boolean b, boolean c) {
+        if (a && b && c) {
+            result1.setText("Oreo Ice Cream");
+            result1.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    super.mouseClicked(e);
+                    try {
+
+                        Desktop.getDesktop().browse(new URI("https://www.thecookingfoodie.com/recipe/Easy-Homemade-Oreo-Ice-Cream-Recipe"));
+
+                    } catch (IOException | URISyntaxException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            });
         }
     }
-    public void berryBerryCoolPieChecker(boolean a, boolean b, boolean c, boolean d, boolean e){
-        if(a && b && c && d && e){
-            System.out.println("BERRY BERRY COOL PIE");
+
+    public void berryBerryCoolPieChecker(boolean a, boolean b, boolean c, boolean d, boolean e) {
+        if (a && b && c && d && e) {
+            result2.setText("Berry Berry Cool Pie");
+            result2.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    super.mouseClicked(e);
+                    try {
+
+                        Desktop.getDesktop().browse(new URI("https://www.foodnetwork.com/recipes/berry-berry-cool-pie-recipe-1970480"));
+
+                    } catch (IOException | URISyntaxException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            });
         }
     }
+
 }
 
 

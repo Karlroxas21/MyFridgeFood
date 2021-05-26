@@ -5,7 +5,11 @@ import java.awt.event.ActionListener;
 
 public class GUITemplate extends JFrame implements ActionListener {
 
+    JLabel result1 = new JLabel("");
+    JLabel result2 = new JLabel("");
+    JLabel result3 = new JLabel("");
 
+    JPanel guidePanelOnly = new JPanel();
 
     JRadioButton foodA1 = new JRadioButton("Food A1");
     JRadioButton foodA2 = new JRadioButton("Food A2");
@@ -44,25 +48,12 @@ public class GUITemplate extends JFrame implements ActionListener {
 
     JPanel selectPanel = new JPanel();
 
-    JPanel selectedPanel = new JPanel();
-    JLabel labelSelectedPanel = new JLabel();
 
     JLabel foodCategory = new JLabel();
 
     JButton findMeFood = new JButton("FIND ME A FOOD!");
     JButton resetFridge = new JButton("Reset my Fridge!");
 
-
-    JLabel labelSelect1 = new JLabel();
-    JLabel labelSelect2 = new JLabel("B");
-    JLabel labelSelect3 = new JLabel("C");
-    JLabel labelSelect4 = new JLabel("D");
-    JLabel labelSelect5 = new JLabel("E");
-    JLabel labelSelect6 = new JLabel("F");
-    JLabel labelSelect7 = new JLabel("G");
-    JLabel labelSelect8 = new JLabel("H");
-    JLabel labelSelect9 = new JLabel("I");
-    JLabel labelSelect0 = new JLabel("J");
 
 
     public GUITemplate(String name){
@@ -73,41 +64,41 @@ public class GUITemplate extends JFrame implements ActionListener {
         selectPanel.setBorder(BorderFactory.createEtchedBorder());
         selectPanel.setLayout(new GridLayout(10, 2));
 
-        selectedPanel.setLayout(null);
-        selectedPanel.setBounds(544, 10,790, 200);
-        selectedPanel.setBorder(BorderFactory.createEtchedBorder());
-        selectedPanel.setLayout(new GridLayout(5,2));
+//        guidePanelOnly.setBorder(BorderFactory.createEtchedBorder());
+        guidePanelOnly.setLayout(new GridLayout(3,1));
+        guidePanelOnly.setBounds(537,50,443,615);
 
 
 
-        foodCategory.setBounds(550,225,200,20);
 
-        findMeFood.setBounds(544,669,395,40);
-        resetFridge.setBounds(940,669,395,40);
+        foodCategory.setBounds(550,15,200,30);
 
-        foodCategory.setText(name);
+        findMeFood.setBounds(537,669,220,40);
+        resetFridge.setBounds(760,669,220,40);
+
+        foodCategory.setText(name + ";");
+
+        result1.setBounds(580, 40, 200, 30);
+        result2.setBounds(580, 40, 200, 30);
+        result3.setBounds(580, 40, 200, 30);
+
 
         //end of guide
 
         //customization only
-        foodCategory.setFont(new Font("Times New Roman",Font.ITALIC,21));
+        result1.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        result1.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        result2.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        result2.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        result3.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+        result3.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        foodCategory.setFont(new Font("Times New Roman",Font.ITALIC,30));
 
 
-        findMeFood.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+        findMeFood.setFont(new Font("Times New Roman", Font.PLAIN, 21));
         findMeFood.setFocusable(false);
         resetFridge.setFont(new Font("Times New Roman",Font.ITALIC,21));
         resetFridge.setFocusable(false);
-
-        labelSelect1.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect2.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect3.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect4.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect5.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect6.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect7.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect8.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect9.setFont(new Font("Times New Roman", Font.PLAIN,22));
-        labelSelect0.setFont(new Font("Times New Roman", Font.PLAIN,22));
 
 
         foodA1.setFocusable(false);
@@ -179,6 +170,7 @@ public class GUITemplate extends JFrame implements ActionListener {
         foodC8.addActionListener(this);
         foodC9.addActionListener(this);
         foodC0.addActionListener(this);
+
         selectPanel.add(foodA1);
         selectPanel.add(foodA2);
         selectPanel.add(foodA3);
@@ -217,23 +209,26 @@ public class GUITemplate extends JFrame implements ActionListener {
 
 
 
-
-
         findMeFood.addActionListener(this);
         resetFridge.addActionListener(this);
         //do not move/ edit this.
         this.add(selectPanel);
-        this.add(selectedPanel);
 
         this.add(foodCategory);
 
         this.add(findMeFood);
         this.add(resetFridge);
 
+        guidePanelOnly.add(result1);
+        guidePanelOnly.add(result2);
+        guidePanelOnly.add(result3);
+
+        this.add(guidePanelOnly);
+
         this.setTitle("My Fridge Food- " + name);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
-        this.setSize(1360, 760);
+        this.setSize(1000, 760);
         this.setLayout(null);
         this.setVisible(true);
         this.validate();
