@@ -4,18 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUITemplate extends JFrame implements ActionListener {
-    int temp = 2;
 
-    JRadioButton foodA1 = new JRadioButton();
-    JRadioButton foodA2 = new JRadioButton("Food A");
-    JRadioButton foodA3 = new JRadioButton("Food A");
-    JRadioButton foodA4 = new JRadioButton("Food A");
-    JRadioButton foodA5 = new JRadioButton("Food A");
-    JRadioButton foodA6 = new JRadioButton("Food A");
-    JRadioButton foodA7 = new JRadioButton("Food A");
-    JRadioButton foodA8 = new JRadioButton("Food A");
-    JRadioButton foodA9 = new JRadioButton("Food A");
-    JRadioButton foodA0 = new JRadioButton("Food A");
+
+
+    JRadioButton foodA1 = new JRadioButton("Food A1");
+    JRadioButton foodA2 = new JRadioButton("Food A2");
+    JRadioButton foodA3 = new JRadioButton("Food A3");
+    JRadioButton foodA4 = new JRadioButton("Food A4");
+    JRadioButton foodA5 = new JRadioButton("Food A5");
+    JRadioButton foodA6 = new JRadioButton("Food A6");
+    JRadioButton foodA7 = new JRadioButton("Food A7");
+    JRadioButton foodA8 = new JRadioButton("Food A8");
+    JRadioButton foodA9 = new JRadioButton("Food A9");
+    JRadioButton foodA0 = new JRadioButton("Food A0");
 
     JRadioButton foodB1 = new JRadioButton("Food B1");
     JRadioButton foodB2 = new JRadioButton("Food B2");
@@ -149,7 +150,35 @@ public class GUITemplate extends JFrame implements ActionListener {
 
         //add here
         foodA1.addActionListener(this);
-
+        foodA2.addActionListener(this);
+        foodA3.addActionListener(this);
+        foodA4.addActionListener(this);
+        foodA5.addActionListener(this);
+        foodA6.addActionListener(this);
+        foodA7.addActionListener(this);
+        foodA8.addActionListener(this);
+        foodA9.addActionListener(this);
+        foodA0.addActionListener(this);
+        foodB1.addActionListener(this);
+        foodB2.addActionListener(this);
+        foodB3.addActionListener(this);
+        foodB4.addActionListener(this);
+        foodB5.addActionListener(this);
+        foodB6.addActionListener(this);
+        foodB7.addActionListener(this);
+        foodB8.addActionListener(this);
+        foodB9.addActionListener(this);
+        foodB0.addActionListener(this);
+        foodC1.addActionListener(this);
+        foodC2.addActionListener(this);
+        foodC3.addActionListener(this);
+        foodC4.addActionListener(this);
+        foodC5.addActionListener(this);
+        foodC6.addActionListener(this);
+        foodC7.addActionListener(this);
+        foodC8.addActionListener(this);
+        foodC9.addActionListener(this);
+        foodC0.addActionListener(this);
         selectPanel.add(foodA1);
         selectPanel.add(foodA2);
         selectPanel.add(foodA3);
@@ -223,7 +252,6 @@ public class GUITemplate extends JFrame implements ActionListener {
         if(e.getSource().equals(resetFridge)){
             this.dispose();
             new LaunchPage();
-            temp = 2;
         }
     }
 
