@@ -115,7 +115,7 @@ public class Dessert extends GUITemplate {
     @Override
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
-        if (e.getSource() == (findMeFood)) {
+        if (e.getSource() ==findMeFood) {
             avocadoBakedEggsChecker(avocadoBE1, avocadoBE2, avocadoBE3);
             fruitShakeChecker(fruitS1, fruitS2, fruitS3, fruitS4);
             chocolateLavaCakeChecker(chocolateLC1, chocolateLC2, chocolateLC3, chocolateLC4, chocolateLC5, chocolateLC6);
@@ -228,10 +228,6 @@ public class Dessert extends GUITemplate {
         }
 
 
-    }
-
-    public String getFood(JRadioButton a) {
-        return a.getText();
     }
 
     public void avocadoBakedEggsChecker(boolean a, boolean b, boolean c) {

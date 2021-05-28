@@ -3,6 +3,7 @@ public class main {
 
 
         LaunchPage launchMe = new LaunchPage();
+//        new encryptedPage();
 
 
     }
