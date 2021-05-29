@@ -45,17 +45,22 @@ public class tanong1Page extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setLayout(null);
         this.setVisible(true);
+
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==option1){
             answer = true;
-            System.out.println(answer);
         }else if (e.getSource()==option2){
             answer = false;
         }else if (e.getSource()==option3){
             answer = false;
+        }if(answer){
+            this.dispose();
+            new LaunchPage();
         }
 
+
     }
+
 }
