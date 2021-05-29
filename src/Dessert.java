@@ -109,9 +109,7 @@ public class Dessert extends GUITemplate {
         //insert Condensed Milk
         foodC9.setText("Whipped Toppings");
         foodC0.setText("Pie Crust");
-
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
@@ -381,7 +379,6 @@ public class Dessert extends GUITemplate {
             });
         }
     }
-
 }
 
 

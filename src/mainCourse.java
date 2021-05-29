@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -107,10 +106,7 @@ public class mainCourse extends GUITemplate {
         //endof salt and pepper fish
         foodC0.setText("Squid");
         //end of salt and pepper squid
-
-
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
@@ -218,7 +214,6 @@ public class mainCourse extends GUITemplate {
             SPS1 = true;
         }
     }
-
     public void stirFriedChecker(boolean a, boolean b) {
         if (a && b) {
             result1.setText("Stir Fried Kangkong with Tokwa");
