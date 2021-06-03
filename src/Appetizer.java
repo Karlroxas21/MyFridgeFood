@@ -3,11 +3,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 public class Appetizer extends GUITemplate   {
+
+    ArrayList<String> appetizerStock = new ArrayList<>();
     boolean bananaDuplicate;
     boolean creamDuplicate;
     boolean flourDuplicate;
@@ -118,95 +123,150 @@ public class Appetizer extends GUITemplate   {
             colesLawChecker(coleslaw1, coleslaw2, coleslaw3);
             cheesePotatoBallsChecker(potatoDuplicate, breadCrumbsDuplicate, cheesePB1, cheesePB2, springOnionDuplicate);
         }
+        if(e.getSource()==saveItem){
+            JFileChooser fileChooser = new JFileChooser();
+
+            fileChooser.setCurrentDirectory(new File("")); //sets current directory
+
+//            int response = fileChooser.showOpenDialog(null); //select file to open
+            int response = fileChooser.showSaveDialog(null); //select file to save
+
+
+            if(response == JFileChooser.APPROVE_OPTION) {
+                File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                File myObj = new File(String.valueOf(file));
+                try {
+                    FileWriter fileWriter = new FileWriter(file);
+                    myObj.createNewFile();
+                    fileWriter.write(String.valueOf(appetizerStock) + " = " + result1.getText() + " / " + result2.getText() + " / " + result3.getText() );
+
+                    fileWriter.close();
+                }
+                catch (IOException f) {
+                    System.out.println("An error occurred.");
+                    f.printStackTrace();
+                }
+            }
+        }
         if (e.getSource() == foodA1) {
             fruitS1 = true;
+            appetizerStock.add(foodA1.getText());
         }
         if (e.getSource() == foodA2) {
             fruitS2 = true;
+            appetizerStock.add(foodA2.getText());
         }
         if (e.getSource() == foodA3) {
             fruitS3 = true;
+            appetizerStock.add(foodA3.getText());
         }
         if (e.getSource() == foodA4) {
             fruitS4 = true;
+            appetizerStock.add(foodA4.getText());
         }
         if (e.getSource() == foodA5) {
             bananaDuplicate = true;
+            appetizerStock.add(foodA5.getText());
         }
         if (e.getSource() == foodA6) {
             fruitS5 = true;
+            appetizerStock.add(foodA6.getText());
         }
         if (e.getSource() == foodA7) {
             fruitS6 = true;
+            appetizerStock.add(foodA7.getText());
         }
         if (e.getSource() == foodA8) {
             creamDuplicate = true;
+            appetizerStock.add(foodA8.getText());
         }
         if (e.getSource() == foodA9) {
             fruitShake1 = true;
+            appetizerStock.add(foodA9.getText());
         }
         if (e.getSource() == foodA0) {
             fruitShake2 = true;
+            appetizerStock.add(foodA0.getText());
         }
         if (e.getSource() == foodB1) {
             fruitShake3 = true;
+            appetizerStock.add(foodB1.getText());
         }
         if (e.getSource() == foodB2) {
             fruitShake4 = true;
+            appetizerStock.add(foodB2.getText());
         }
         if (e.getSource() == foodB3) {
             chickenS1 = true;
+            appetizerStock.add(foodB3.getText());
         }
         if (e.getSource() == foodB4) {
             saltDuplicate= true;
+            appetizerStock.add(foodB4.getText());
         }
         if (e.getSource() == foodB5) {
             flourDuplicate = true;
+            appetizerStock.add(foodB5.getText());
         }
         if (e.getSource() == foodB6) {
             chickenS2 = true;
+            appetizerStock.add(foodB6.getText());
         }
         if (e.getSource() == foodB7) {
             chickenS3 = true;
+            appetizerStock.add(foodB7.getText());
         }
         if (e.getSource() == foodB8) {
             popCornC1 = true;
+            appetizerStock.add(foodB8.getText());
         }
         if (e.getSource() == foodB9) {
             breadCrumbsDuplicate = true;
+            appetizerStock.add(foodB9.getText());
         }
         if (e.getSource() == foodB0) {
             popCornC2 = true;
+            appetizerStock.add(foodB0.getText());
         }
         if (e.getSource() == foodC1) {
             popCornC3 = true;
+            appetizerStock.add(foodC1.getText());
         }
         if (e.getSource() == foodC2) {
             potatoDuplicate = true;
+            appetizerStock.add(foodC2.getText());
         }
         if (e.getSource() == foodC3) {
             frenchF1 = true;
+            appetizerStock.add(foodC3.getText());
         }
         if (e.getSource() == foodC4) {
             mashed1 = true;
+            appetizerStock.add(foodC4.getText());
         }
         if (e.getSource() == foodC5) {
             springOnionDuplicate = true;
+            appetizerStock.add(foodC5.getText());
         }
         if (e.getSource() == foodC6) {
             coleslaw1 = true;
+            appetizerStock.add(foodC6.getText());
         }
         if (e.getSource() == foodC7) {
             coleslaw2 = true;
+            appetizerStock.add(foodC7.getText());
         }
         if (e.getSource() == foodC8) {
             coleslaw3 = true;
+            appetizerStock.add(foodC8.getText());
         }
         if (e.getSource() == foodC9) {
             cheesePB1 = true;
+            appetizerStock.add(foodC9.getText());
         }
         if (e.getSource() == foodC0) {
             cheesePB2 = true;
+            appetizerStock.add(foodC0.getText());
         }
     }
 
