@@ -1,12 +1,19 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 
 public class mainCourse extends GUITemplate {
+
+    ArrayList <String> mainCourseStock = new ArrayList<>();
+
     boolean onionDuplicate;
     boolean gingerDuplicate;
     boolean calamansiDuplicate;
@@ -49,7 +56,7 @@ public class mainCourse extends GUITemplate {
     boolean SPS1;
 
 
-    mainCourse() {
+    mainCourse()  {
         super("Main Course");
         String onionDuplicate = "Onion";
         String gingerDuplicate = "Ginger";
@@ -110,6 +117,30 @@ public class mainCourse extends GUITemplate {
     @Override
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
+        if(e.getSource()==saveItem){
+            JFileChooser fileChooser = new JFileChooser();
+
+            fileChooser.setCurrentDirectory(new File("")); //sets current directory
+
+//            int response = fileChooser.showOpenDialog(null); //select file to open
+            int response = fileChooser.showSaveDialog(null); //select file to save
+
+            if(response == JFileChooser.APPROVE_OPTION) {
+                File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                File myObj = new File(String.valueOf(file));
+                try {
+                    FileWriter fileWriter = new FileWriter(file);
+                    myObj.createNewFile();
+                    fileWriter.write(String.valueOf(mainCourseStock) + " = " + result1.getText() + " / " + result2.getText() + " / " + result3.getText() );
+
+                    fileWriter.close();
+                }
+                catch (IOException f) {
+                    System.out.println("An error occurred.");
+                    f.printStackTrace();
+                }
+            }
+        }
         if (e.getSource() == findMeFood) {
             stirFriedChecker(stirFried1, stirFried2);
             lawuyChecker(lawuy1, lawuy2, lawuy3, lawuy4, lawuy5, onionDuplicate);
@@ -122,96 +153,124 @@ public class mainCourse extends GUITemplate {
         }
         if (e.getSource() == foodA1) {
             stirFried1 = true;
+            mainCourseStock.add(foodA1.getText());
 
         }
         if (e.getSource() == foodA2) {
             stirFried2 = true;
-
+            mainCourseStock.add(foodA2.getText());
         }
         if (e.getSource() == foodA3) {
             lawuy1 = true;
+            mainCourseStock.add(foodA3.getText());
         }
         if (e.getSource() == foodA4) {
             onionDuplicate = true;
+            mainCourseStock.add(foodA4.getText());
         }
         if (e.getSource() == foodA5) {
             lawuy2 = true;
+            mainCourseStock.add(foodA5.getText());
         }
         if (e.getSource() == foodA6) {
             lawuy3 = true;
+            mainCourseStock.add(foodA6.getText());
         }
         if (e.getSource() == foodA7) {
             lawuy4 = true;
+            mainCourseStock.add(foodA7.getText());
         }
         if (e.getSource() == foodA8) {
             lawuy5 = true;
+            mainCourseStock.add(foodA8.getText());
         }
         if (e.getSource() == foodA9) {
             pesangIsda1 = true;
-
+            mainCourseStock.add(foodA9.getText());
         }
         if (e.getSource() == foodA0) {
             gingerDuplicate = true;
+            mainCourseStock.add(foodA0.getText());
         }
         if (e.getSource() == foodB1) {
             pesangIsda2 = true;
+            mainCourseStock.add(foodB1.getText());
         }
         if (e.getSource() == foodB2) {
             porkSisig1 = true;
+            mainCourseStock.add(foodB2.getText());
         }
         if (e.getSource() == foodB3) {
             calamansiDuplicate = true;
+            mainCourseStock.add(foodB3.getText());
         }
         if (e.getSource() == foodB4) {
             butterDuplicate = true;
+            mainCourseStock.add(foodB4.getText());
         }
         if (e.getSource() == foodB5) {
             porkSisig2 = true;
+            mainCourseStock.add(foodB5.getText());
         }
         if (e.getSource() == foodB6) {
             garlicDuplicate = true;
+            mainCourseStock.add(foodB6.getText());
         }
         if (e.getSource() == foodB7) {
             bicolE1 = true;
+            mainCourseStock.add(foodB7.getText());
         }
         if (e.getSource() == foodB8) {
             bicolE2 = true;
+            mainCourseStock.add(foodB8.getText());
         }
         if (e.getSource() == foodB9) {
             bicolE3 = true;
+            mainCourseStock.add(foodB9.getText());
         }
         if (e.getSource() == foodB0) {
             bicolE4 = true;
+            mainCourseStock.add(foodB0.getText());
         }
         if (e.getSource() == foodC1) {
             friedC1 = true;
+            mainCourseStock.add(foodC1.getText());
         }
         if (e.getSource() == foodC2) {
             friedC2 = true;
+            mainCourseStock.add(foodC2.getText());
         }
         if (e.getSource() == foodC3) {
             eggDuplicate = true;
+            mainCourseStock.add(foodC3.getText());
         }
         if (e.getSource() == foodC4) {
             friedC3 = true;
+            mainCourseStock.add(foodC4.getText());
         }
         if (e.getSource() == foodC5) {
             SPF1 = true;
+            mainCourseStock.add(foodC5.getText());
         }
         if (e.getSource() == foodC6) {
             cornStrachDuplicate = true;
+            mainCourseStock.add(foodC5.getText());
         }
         if (e.getSource() == foodC7) {
             saltDuplicate = true;
+            mainCourseStock.add(foodC7.getText());
         }
         if (e.getSource() == foodC8) {
             pepperDuplicate = true;
+            mainCourseStock.add(foodC8.getText());
         }
         if (e.getSource() == foodC9) {
             bellChiliDuplicate = true;
+            mainCourseStock.add(foodC9.getText());
         }
         if (e.getSource() == foodC0) {
             SPS1 = true;
+            mainCourseStock.add(foodC0.getText());
         }
     }
     public void stirFriedChecker(boolean a, boolean b) {

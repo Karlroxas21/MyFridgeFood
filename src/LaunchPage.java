@@ -50,7 +50,6 @@ public class LaunchPage extends JFrame implements ActionListener {
         if(e.getSource().equals(dessert)){
             this.dispose();
             new Dessert();
-
         }
         else if(e.getSource().equals(appetizer)){
             this.dispose();

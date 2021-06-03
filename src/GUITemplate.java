@@ -5,6 +5,11 @@ import java.awt.event.ActionListener;
 
 public class GUITemplate extends JFrame implements ActionListener {
 
+    JMenuBar menuBar = new JMenuBar();
+
+    JMenu fileMenu = new JMenu("File");
+    JMenuItem saveItem= new JMenuItem("Save");
+
     JLabel result1 = new JLabel("");
     JLabel result2 = new JLabel("");
     JLabel result3 = new JLabel("");
@@ -60,21 +65,21 @@ public class GUITemplate extends JFrame implements ActionListener {
 
         //guides only
         selectPanel.setLayout(null);
-        selectPanel.setBounds(10,10,524,700);
+        selectPanel.setBounds(10,10,524,680);
         selectPanel.setBorder(BorderFactory.createEtchedBorder());
         selectPanel.setLayout(new GridLayout(10, 2));
 
 //        guidePanelOnly.setBorder(BorderFactory.createEtchedBorder());
         guidePanelOnly.setLayout(new GridLayout(3,1));
-        guidePanelOnly.setBounds(537,50,443,615);
+        guidePanelOnly.setBounds(537,50,443,595);
 
 
 
 
         foodCategory.setBounds(550,15,200,30);
 
-        findMeFood.setBounds(537,669,220,40);
-        resetFridge.setBounds(760,669,220,40);
+        findMeFood.setBounds(537,649,220,40);
+        resetFridge.setBounds(760,649,220,40);
 
         foodCategory.setText(name + ";");
 
@@ -222,6 +227,15 @@ public class GUITemplate extends JFrame implements ActionListener {
         guidePanelOnly.add(result1);
         guidePanelOnly.add(result2);
         guidePanelOnly.add(result3);
+
+
+        fileMenu.add(saveItem);
+
+        menuBar.add(fileMenu);
+        this.setJMenuBar(menuBar);
+
+        saveItem.addActionListener(this);
+
 
         this.add(guidePanelOnly);
 
